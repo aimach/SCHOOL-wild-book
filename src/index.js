@@ -5,6 +5,7 @@ import App from './App';
 import ErrorPage from './pages/ErrorPage';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import AddWilder from './pages/Form';
+import DeleteWilder from './pages/Delete';
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,11 @@ const router = createBrowserRouter([
   {
     path:"/add",
     element: <AddWilder/>,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path:"/delete",
+    element: <DeleteWilder/>,
     errorElement: <ErrorPage />,
   },
 ])

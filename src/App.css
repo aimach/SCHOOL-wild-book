@@ -93,12 +93,13 @@ footer {
 .button {
   /* Reset text link default */
   text-decoration: none;
-
   background-color: #F76C6C;
   color: #fff;
   padding: 0.5em 1em;
   border-radius: 4px;
   display: inline-block;
+  border:none;
+  margin-right:10px;
 }
 
 .card .skills {
@@ -138,4 +139,11 @@ footer {
 form {
   display: flex;
   flex-direction: column;
+}
+
+.deleteCard  {
+  border : 1px solid lightcoral;
+  border-radius: 5px;
+  margin:5px;
+  padding:5px;
 }

@@ -6,7 +6,7 @@ function Wilder({ wilder }) {
   console.log(wilder)
   return (
     <article className="card">
-      <img src={profile} alt="Jane Doe Profile" />
+      <img src={profile} alt="wilder profile" />
       <h3>{wilder.name}</h3>
       <p>
         {wilder.description}

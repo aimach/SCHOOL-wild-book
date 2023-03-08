@@ -1,11 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 const AddWilder = () => {
   const [wilder, setWilder] = useState({name: "", email: "", description: ""});
-  console.log(wilder)
   return (
     <>
     <Header/>
@@ -14,8 +14,9 @@ const AddWilder = () => {
     onSubmit={(e) => {
       e.preventDefault();
       axios.post("http://localhost:5000/api/wilder", wilder)
+
     }}>
-      <label>Name : </label>
+      <label>Name</label>
       <input
       type="text"
       value={wilder.name}
@@ -24,7 +25,7 @@ const AddWilder = () => {
       }}
       />
        <br/>
-      <label>Email : </label>
+      <label>Email</label>
       <input
       type="email"
       value={wilder.email}
@@ -33,7 +34,7 @@ const AddWilder = () => {
       }}
       />
       <br/>
-      <label>Description : </label>
+      <label>Description</label>
       <input
       type="text"
       value={wilder.description}
@@ -42,7 +43,11 @@ const AddWilder = () => {
       }}
       />
       <br/>
-      <button>Add wilder</button>
+      <button className="button">Add Wilder</button>
+      <br/>
+      <Link to="/">
+      <button className="button">Get back</button>
+      </Link>
     </form>
     <Footer/>
     </>
