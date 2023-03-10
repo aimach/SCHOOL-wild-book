@@ -4,8 +4,8 @@ import './index.css';
 import App from './App';
 import ErrorPage from './pages/ErrorPage';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import AddWilder from './pages/Form';
-import DeleteWilder from './pages/Delete';
+import AddWilder from './pages/AddWilder';
+import ModifyWilder from './pages/ModifyWilder';
 
 const router = createBrowserRouter([
   {
@@ -19,8 +19,8 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path:"/delete",
-    element: <DeleteWilder/>,
+    path:"/modify",
+    element: <ModifyWilder/>,
     errorElement: <ErrorPage />,
   },
 ])

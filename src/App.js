@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom';
 
 function App() {
   const [wilders, setWilders] = useState([]);
+  const [isDeleting, setIsDeleting] = useState(false)
+  const [isModified, setIsModified] = useState(false)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,13 +26,12 @@ function App() {
       <Link to="/add">
       <button className="button">Add a new Wilder</button>
       </Link>
-      <Link to="/delete">
-      <button className="button">Delete a Wilder</button>
-      </Link>
+      <button className="button" onClick={() => {setIsDeleting(!isDeleting)}}>Delete a Wilder</button>
+      <button className="button" onClick={() => {setIsModified(!isModified)}}>Modifiy a Wilder</button>
         <h2>Wilders</h2>
         <section className="card-row">
           {wilders.map((wilder) =>
-            <Wilder wilder={wilder} />
+            <Wilder wilder={wilder} isDeleting={isDeleting} isModified={isModified}/>
           )}
         </section>
       </main>

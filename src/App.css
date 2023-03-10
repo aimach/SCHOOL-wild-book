@@ -141,9 +141,19 @@ form {
   flex-direction: column;
 }
 
-.deleteCard  {
-  border : 1px solid lightcoral;
+label {
+  font-weight: bold;
+  margin-bottom:1rem;
+}
+
+.skills {
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+input {
+  border:1px solid #F76C6C;
   border-radius: 5px;
-  margin:5px;
-  padding:5px;
 }
