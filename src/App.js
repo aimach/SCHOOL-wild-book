@@ -31,7 +31,7 @@ function App() {
         <h2>Wilders</h2>
         <section className="card-row">
           {wilders.map((wilder) =>
-            <Wilder wilder={wilder} isDeleting={isDeleting} isModified={isModified}/>
+            <Wilder wilder={wilder} isDeleting={isDeleting} isModified={isModified}  key={wilder.id}/>
           )}
         </section>
       </main>

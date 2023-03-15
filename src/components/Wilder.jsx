@@ -22,7 +22,7 @@ function Wilder({ wilder, isDeleting, isModified }) {
       <h4>Wild Skills</h4>
       <ul className="skills">
         {wilder.skills.map((skill) =>
-          <Skill skill={skill} />
+          <Skill skill={skill} key={skill.id}/>
         )}
       </ul>
       {isModified ? (<Link to={`/modify`} state={{ wilder: wilder}}><button className='button'>Modify</button></Link>) : null}

@@ -10,6 +10,8 @@ const AddWilder = () => {
   const [skills, setSkills] = useState([]);
   const [wilderSkills, setWilderSkills] = useState([]);
 
+  console.log(wilderSkills)
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -24,7 +26,7 @@ const AddWilder = () => {
     if (e) {
       setWilderSkills([...wilderSkills, skill.id])
     } else {
-      const skillWithIdIndex = wilderSkills.findIndex((element) => element.id === skill.id);
+      const skillWithIdIndex = wilderSkills.findIndex((element) => element === skill.id);
       if (skillWithIdIndex > -1) {
         wilderSkills.splice(skillWithIdIndex, 1)
       }
@@ -34,7 +36,6 @@ const AddWilder = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     let newWilder = await axios.post("http://localhost:5000/api/wilder", wilder)
-    console.log(wilderSkills)
     axios.post(`http://localhost:5000/api/wilder/${newWilder.data.id}`, {"skills": wilderSkills})
     navigate("/");
   }
@@ -76,7 +77,7 @@ const AddWilder = () => {
       <div className="skills">
       {skills.map((skill) => {
         return(
-        <div>
+        <div key={skill.id}>
         <input type="checkbox" onClick={(e) => handleChecked(e.target.checked, skill)}/>
         {skill.name}
         </div>
